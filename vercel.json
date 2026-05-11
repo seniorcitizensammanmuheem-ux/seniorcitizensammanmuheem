@@ -2,11 +2,5 @@
   "framework": null,
   "buildCommand": "vite build",
   "installCommand": "npm install",
-  "outputDirectory": "dist/client",
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "dist/server/server.js"
-    }
-  ]
+  "outputDirectory": ".vercel/output"
 }
