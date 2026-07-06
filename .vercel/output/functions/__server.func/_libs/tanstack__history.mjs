@@ -1,3 +1,29 @@
+var stateIndexKey$1 = "__TSR_index";
+function sanitizePath$1(path) {
+  let sanitized = path.replace(/[\x00-\x1f\x7f]/g, "");
+  if (sanitized.startsWith("//")) sanitized = "/" + sanitized.replace(/^\/+/, "");
+  return sanitized;
+}
+function parseHref$1(href, state) {
+  const sanitizedHref = sanitizePath$1(href);
+  const hashIndex = sanitizedHref.indexOf("#");
+  const searchIndex = sanitizedHref.indexOf("?");
+  const addedKey = createRandomKey$1();
+  return {
+    href: sanitizedHref,
+    pathname: sanitizedHref.substring(0, hashIndex > 0 ? searchIndex > 0 ? Math.min(hashIndex, searchIndex) : hashIndex : searchIndex > 0 ? searchIndex : sanitizedHref.length),
+    hash: hashIndex > -1 ? sanitizedHref.substring(hashIndex) : "",
+    search: searchIndex > -1 ? sanitizedHref.slice(searchIndex, hashIndex === -1 ? void 0 : hashIndex) : "",
+    state: state || {
+      [stateIndexKey$1]: 0,
+      key: addedKey,
+      __TSR_key: addedKey
+    }
+  };
+}
+function createRandomKey$1() {
+  return (Math.random() + 1).toString(36).substring(7);
+}
 var stateIndexKey = "__TSR_index";
 function createHistory(opts) {
   let location = opts.getLocation();
@@ -200,5 +226,5 @@ function createRandomKey() {
 }
 export {
   createMemoryHistory as c,
-  parseHref as p
+  parseHref$1 as p
 };
