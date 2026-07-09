@@ -74,6 +74,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
+      { name: 'google-site-verification', content: 'nXxx3UHQQ5AB4gv2mmiSDNI8GGmcNwrKLr2YsokyxKo' },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Senior Citizen Samman Muheem — Respect, Care, Dignity" },
       { name: "description", content: "An NGO dedicated to the dignity, care, and welfare of senior citizens across Delhi NCR & Faridabad." },
