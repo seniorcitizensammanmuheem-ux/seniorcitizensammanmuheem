@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Heart, HandHeart, Users, Shield, ShoppingBag, Pill, Accessibility, Home, Megaphone, Scale, UsersRound, MapPin, ArrowRight, Quote } from "lucide-react";
+import { DonateCard } from "@/components/DonateCard";
 import heroImg from "@/assets/hero-elders.jpg";
 import sunsetImg from "@/assets/elders-sunset.jpg";
 import sevaImg from "@/assets/seva-ration.jpg";
@@ -27,6 +28,7 @@ function Index() {
       <OldAgeHome />
       <Awareness />
       <Belief />
+      <DonateSection />
       <CTA />
     </div>
   );
@@ -55,6 +57,9 @@ function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-india-green text-india-green-foreground font-semibold shadow-soft hover:opacity-90 transition">
               Join the Mission <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link to="/donate" className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-saffron text-saffron-foreground font-semibold shadow-soft hover:opacity-90 transition">
+              <HandHeart className="w-4 h-4" /> Donate
             </Link>
             <Link to="/services" className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-white border border-border text-navy font-semibold hover:bg-accent transition">
               Our Services
@@ -305,6 +310,45 @@ function Belief() {
             <div className="w-10 h-10 rounded-full ashoka-chakra" />
             Senior Citizen Samman Muheem
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DonateSection() {
+  return (
+    <section className="bg-cream py-20">
+      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <SectionTag>Support Our Seva</SectionTag>
+          <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold text-navy">
+            Your donation brings dignity to every elder.
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Scan the QR code with any UPI app to contribute. Every donation supports our seva on the ground
+            in Delhi NCR &amp; Faridabad.
+          </p>
+          <ul className="mt-6 space-y-3">
+            {[
+              { icon: HandHeart, text: "Nutritious meals and ration kits" },
+              { icon: Pill, text: "Medicines and healthcare support" },
+              { icon: Home, text: "Shelter and care at our old-age home" },
+            ].map((it) => (
+              <li key={it.text} className="flex items-center gap-3">
+                <span className="w-9 h-9 rounded-lg bg-india-green/10 flex items-center justify-center flex-shrink-0">
+                  <it.icon className="w-5 h-5 text-india-green" />
+                </span>
+                <span className="text-foreground">{it.text}</span>
+              </li>
+            ))}
+          </ul>
+          <Link to="/donate" className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-md bg-saffron text-saffron-foreground font-semibold shadow-soft hover:opacity-90 transition">
+            Donate Now <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+        <div className="max-w-md w-full mx-auto">
+          <DonateCard />
         </div>
       </div>
     </section>

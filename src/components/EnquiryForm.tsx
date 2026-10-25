@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { z } from "zod";
-import { MessageCircle, Mail, Send, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, Send, CheckCircle2 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 const WHATSAPP_NUMBER = "918882237024"; // +91 88822 37024
 const EMAIL_TO = "connect@sammanmuheem.org";
@@ -107,12 +108,12 @@ export function EnquiryForm() {
           rel="noopener"
           className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-saffron text-saffron-foreground font-semibold hover:opacity-90 transition shadow-soft"
         >
-          <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
+          <WhatsAppIcon className="w-4 h-4" /> Chat on WhatsApp
         </a>
       </div>
 
       <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-2 text-xs text-muted-foreground">
-        <span className="inline-flex items-center gap-1.5"><MessageCircle className="w-3.5 h-3.5 text-india-green" /> +91 88822 37024</span>
+        <span className="inline-flex items-center gap-1.5"><Phone className="w-3.5 h-3.5 text-india-green" /> +91 88822 37024</span>
         <span className="hidden sm:inline">•</span>
         <span className="inline-flex items-center gap-1.5"><Mail className="w-3.5 h-3.5 text-saffron" /> {EMAIL_TO}</span>
       </div>
@@ -151,7 +152,7 @@ export function FloatingWhatsApp() {
       className="fixed bottom-5 right-5 z-50 group inline-flex items-center gap-2 pl-3 pr-4 py-3 rounded-full bg-[#25D366] text-white font-semibold shadow-elevated hover:scale-105 transition-transform"
     >
       <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-        <MessageCircle className="w-5 h-5" fill="white" />
+        <WhatsAppIcon className="w-5 h-5 text-white" />
       </span>
       <span className="text-sm hidden sm:inline">Chat with us</span>
     </a>
