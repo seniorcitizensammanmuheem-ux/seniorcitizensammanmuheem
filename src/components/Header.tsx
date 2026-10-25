@@ -8,6 +8,7 @@ const links = [
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
   { to: "/mission", label: "Mission" },
+  { to: "/donate", label: "Donate" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -25,7 +26,7 @@ export function Header() {
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           {links.map((l) => (
             <Link
               key={l.to}
@@ -47,13 +48,13 @@ export function Header() {
           </a>
         </nav>
 
-        <button onClick={() => setOpen(!open)} className="md:hidden p-2 rounded-md hover:bg-accent" aria-label="Menu">
+        <button onClick={() => setOpen(!open)} className="lg:hidden p-2 rounded-md hover:bg-accent" aria-label="Menu">
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-border bg-background">
+        <div className="lg:hidden border-t border-border bg-background">
           <div className="container mx-auto px-4 py-3 flex flex-col gap-1">
             {links.map((l) => (
               <Link

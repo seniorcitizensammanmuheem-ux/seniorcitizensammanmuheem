@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, MapPin, Mail, HandHeart, Megaphone, Heart, Users } from "lucide-react";
 import { PageHero } from "./about";
 import { EnquiryForm } from "@/components/EnquiryForm";
@@ -36,6 +36,41 @@ function ContactPage() {
             )}
           </div>
         ))}
+      </section>
+
+      <section className="container mx-auto px-4 pb-16">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 className="font-display text-3xl font-bold text-navy">Our Committee</h2>
+            <p className="mt-2 text-muted-foreground">Reach out directly to our office bearers.</p>
+          </div>
+          <Link
+            to="/donate"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-saffron text-saffron-foreground font-semibold text-sm shadow-soft hover:opacity-90 transition"
+          >
+            Donate via UPI
+          </Link>
+        </div>
+        <div className="mt-6 grid md:grid-cols-3 gap-5">
+          {[
+            { name: "Manoj Kumar Khanna", role: "President", phone: "+91 88822 37024", href: "tel:8882237024" },
+            { name: "Pandey ji", role: "Treasurer", phone: "+91 99118 81296", href: "tel:9911881296" },
+            { name: "Dharamveer Sharma", role: "Secretary", phone: "+91 99902 13776", href: "tel:9990213776" },
+          ].map((p) => (
+            <div key={p.role} className="p-6 rounded-2xl bg-card border border-border shadow-soft">
+              <div className="flex items-center justify-between gap-3">
+                <div className="w-11 h-11 rounded-lg bg-india-green/10 flex items-center justify-center">
+                  <Users className="w-5 h-5 text-india-green" />
+                </div>
+                <span className="text-xs uppercase tracking-wider text-saffron font-semibold">{p.role}</span>
+              </div>
+              <div className="mt-4 font-semibold text-navy">{p.name}</div>
+              <a href={p.href} className="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-india-green">
+                <Phone className="w-4 h-4" /> {p.phone}
+              </a>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="container mx-auto px-4 pb-16 grid lg:grid-cols-2 gap-10">

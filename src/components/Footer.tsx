@@ -29,6 +29,7 @@ export function Footer() {
             <li><Link to="/about" className="hover:text-saffron">About Us</Link></li>
             <li><Link to="/services" className="hover:text-saffron">Our Services</Link></li>
             <li><Link to="/mission" className="hover:text-saffron">Our Mission</Link></li>
+            <li><Link to="/donate" className="hover:text-saffron">Donate Us</Link></li>
             <li><Link to="/contact" className="hover:text-saffron">Contact</Link></li>
           </ul>
         </div>

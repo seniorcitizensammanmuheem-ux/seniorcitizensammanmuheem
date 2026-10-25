@@ -16,6 +16,9 @@ export const Route = createFileRoute('/sitemap.xml')({
     <loc>https://www.seniorcitizensammanmuheem.org/contact</loc>
   </url>
   <url>
+    <loc>https://www.seniorcitizensammanmuheem.org/donate</loc>
+  </url>
+  <url>
     <loc>https://www.seniorcitizensammanmuheem.org/mission</loc>
   </url>
   <url>

@@ -326,7 +326,7 @@ function CTA() {
             Together for Seva • Humanity • Respect. Every elder deserves to feel valued.
           </p>
           <div className="mt-8 grid sm:grid-cols-2 gap-3 max-w-lg">
-            <Link to="/contact" className="px-6 py-3 rounded-md bg-saffron text-saffron-foreground font-semibold text-center hover:opacity-90 transition shadow-elevated">
+            <Link to="/donate" className="px-6 py-3 rounded-md bg-saffron text-saffron-foreground font-semibold text-center hover:opacity-90 transition shadow-elevated">
               Support Us
             </Link>
             <Link to="/contact" className="px-6 py-3 rounded-md bg-white text-navy font-semibold text-center hover:bg-cream transition">
